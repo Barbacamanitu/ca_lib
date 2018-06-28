@@ -4,13 +4,13 @@ module.exports = {
     mode: "development",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: __dirname + "/www/js/dist"
     },
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
     devServer: {
-             contentBase: './dist'
+             contentBase: './www/'
            },
 
     resolve: {

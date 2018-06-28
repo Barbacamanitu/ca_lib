@@ -86,15 +86,54 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/CellularAutomaton.ts":
+/*!**********************************!*\
+  !*** ./src/CellularAutomaton.ts ***!
+  \**********************************/
+/*! exports provided: CellularAutomaton */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CellularAutomaton", function() { return CellularAutomaton; });
+class CellularAutomaton {
+    constructor(gl) {
+        this.gl = gl;
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/main.ts":
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CellularAutomaton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CellularAutomaton */ "./src/CellularAutomaton.ts");
 
 window.addEventListener("load", (e) => {
     console.log("Loaded");
+    let canvas = document.querySelector("#cvs");
+    canvas.width = document.body.clientWidth;
+    canvas.height = document.body.clientHeight;
+    window.onresize = () => {
+        canvas.style.width = window.innerWidth + "px";
+        setTimeout(() => {
+            canvas.style.height = window.innerHeight + "px";
+        }, 0);
+    };
+    window.onresize.call(undefined);
+    let gl = canvas.getContext("webgl");
+    let ca = new _CellularAutomaton__WEBPACK_IMPORTED_MODULE_0__["CellularAutomaton"](gl);
+    console.log("###########################");
+    console.log("Cellular Automaton:");
+    console.log(ca);
+    console.log("###########################");
 });
 
 
