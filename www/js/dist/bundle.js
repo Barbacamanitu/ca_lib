@@ -90,15 +90,19 @@
 /*!**********************************!*\
   !*** ./src/CellularAutomaton.ts ***!
   \**********************************/
-/*! exports provided: CellularAutomaton */
+/*! exports provided: Vec2, CellularAutomaton */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Vec2", function() { return Vec2; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CellularAutomaton", function() { return CellularAutomaton; });
+class Vec2 {
+}
 class CellularAutomaton {
-    constructor(gl) {
+    constructor(gl, size) {
         this.gl = gl;
+        this.size = size;
     }
 }
 
@@ -129,7 +133,7 @@ window.addEventListener("load", (e) => {
     };
     window.onresize.call(undefined);
     let gl = canvas.getContext("webgl");
-    let ca = new _CellularAutomaton__WEBPACK_IMPORTED_MODULE_0__["CellularAutomaton"](gl);
+    let ca = new _CellularAutomaton__WEBPACK_IMPORTED_MODULE_0__["CellularAutomaton"](gl, { x: 100, y: 100 });
     console.log("###########################");
     console.log("Cellular Automaton:");
     console.log(ca);

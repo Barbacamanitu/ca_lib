@@ -15,7 +15,7 @@ window.addEventListener("load",(e) => {
     window.onresize.call(this);
 
     let gl:WebGLRenderingContext = canvas.getContext("webgl");
-    let ca:CellularAutomaton = new CellularAutomaton(gl);
+    let ca:CellularAutomaton = new CellularAutomaton(gl,{x: 100, y: 100});
 
     console.log("###########################");
     console.log("Cellular Automaton:");
